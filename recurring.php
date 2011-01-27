@@ -5,7 +5,7 @@
 
 require_once('Class.PayFlow.php');
 
-// Single Transaction
+// Recurring Transaction
 $PayFlow = new PayFlow('VENDOR', 'PARTNER', 'USER', 'PASSWORD', 'recurring');
 
 $PayFlow->setEnvironment('test');                           // test or live
