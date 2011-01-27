@@ -35,7 +35,7 @@ $PayFlow->setCustomerZip('10018');
 $PayFlow->setCustomerCountry('US');
 $PayFlow->setCustomerPhone('212-123-1234');
 $PayFlow->setCustomerEmail('richard.castera@gmail.com');
-$PayFlow->setPaymentComment('New Regular Transaction');
+$PayFlow->setPaymentComment('New Monthly Transaction');
 
 if($PayFlow->processTransaction()):
   echo('Transaction Processed Successfully!');
