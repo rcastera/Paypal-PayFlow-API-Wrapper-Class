@@ -1,6 +1,6 @@
 <?php
 /**
- * @uses      Paypal Payflow Class in PHP5
+ * Paypal Payflow Class in PHP5
  * @author    Richard Castera and musicin3d
  * @link      http://www.richardcastera.com/projects/paypal-payflow-api-wrapper-class
  * @link      https://github.com/musicin3d/Paypal-PayFlow-API-Wrapper-Class
@@ -15,7 +15,7 @@ class PayFlow {
 
 
     /**
-     * @uses    Your merchant login ID that you created when you registered for the account.
+     * Your merchant login ID that you created when you registered for the account.
      * @access  Private
      * @var     String
      */
@@ -23,7 +23,7 @@ class PayFlow {
 
 
     /**
-     * @uses    The ID provided to you by the authorized PayPal Reseller who registered you for the Payflow SDK.
+     * The ID provided to you by the authorized PayPal Reseller who registered you for the Payflow SDK.
      * @access  Private
      * @var     String
      */
@@ -31,7 +31,7 @@ class PayFlow {
 
 
     /**
-     * @uses    This value is the ID of the user authorized to process transactions.
+     * This value is the ID of the user authorized to process transactions.
      * @access  Private
      * @var     String
      */
@@ -39,7 +39,7 @@ class PayFlow {
 
 
     /**
-     * @uses    The password that you defined while registering for the account.
+     * The password that you defined while registering for the account.
      * @access  Private
      * @var     String
      */
@@ -47,7 +47,7 @@ class PayFlow {
 
 
     /**
-     * @uses    The environment - (test or live).
+     * The environment - (test or live).
      * @access  Private
      * @var     String
      */
@@ -55,7 +55,7 @@ class PayFlow {
 
 
     /**
-     * @uses    The type of billing transaction - (single or recurring).
+     * The type of billing transaction - (single or recurring).
      * @access  Private
      * @var     String
      */
@@ -63,7 +63,7 @@ class PayFlow {
 
 
     /**
-     * @uses    Contains the URLS for submitting a transaction.
+     * Contains the URLS for submitting a transaction.
      * @access  Private
      * @var     array
      */
@@ -74,7 +74,7 @@ class PayFlow {
 
 
     /**
-     * @uses    Contains the keys for submitting a transaction to PayPal.
+     * Contains the keys for submitting a transaction to PayPal.
      * @access  Private
      * @var     array
      */
@@ -82,7 +82,7 @@ class PayFlow {
 
 
     /**
-     * @uses     Contains an array of values returned from processing the transaction.
+     * Contains an array of values returned from processing the transaction.
      * @access   Private
      * @var      array
      */
@@ -93,7 +93,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Constructor - User paramters to provide the merchant authentication required for access to the payment gateway.
+     * Constructor - User paramters to provide the merchant authentication required for access to the payment gateway.
      * @access    Public
      * @param     String $vendor - Your merchant login ID that you created when you registered for the account.
      * @param     String $partner - The ID provided to you by the authorized PayPal Reseller who registered you for the Payflow SDK.
@@ -115,9 +115,8 @@ class PayFlow {
 
 
     /**
-     * @uses      Destructor.
+     * Destructor.
      * @access    Public
-     * @param     None.
      * @example   unset($obj);
      */
     public function __destruct() {
@@ -126,9 +125,8 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets up default transaction information.
+     * Sets up default transaction information.
      * @access    Private
-     * @param     None.
      * @example   $this->setupDefaults();
      */
     private function setupDefaults() {
@@ -146,7 +144,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Environment of the transaction.
+     * Sets the Environment of the transaction.
      * @access    Public
      * @param     String $environment - Available values: ('test', 'live').
      * @example   $PayFlow->setEnvironment('test');
@@ -162,9 +160,8 @@ class PayFlow {
 
 
     /**
-     * @uses      Returns the Environment of the transaction.
+     * Returns the Environment of the transaction.
      * @access    Public
-     * @param     None.
      * @return    String - The environment set.
      * @example   $PayFlow->getEnvironment();
      */
@@ -174,7 +171,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the type of transaction.
+     * Sets the type of transaction.
      * @access    Public
      * @param     String $transactionType - Available values: S = Sale transaction, R = Recurring, C = Credit, A = Authorization, D = Delayed Capture, V = Void, F = Voice Authorization, I = Inquiry, N = Duplicate transaction
      * @example   $PayFlow->setTransactionType('S');
@@ -189,7 +186,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Payment Method.
+     * Sets the Payment Method.
      * @access    Public
      * @param     String $paymentMethod - Available values: A = Automated clearinghouse, C = Credit card, D = Pinless debit, K = Telecheck, P = PayPal.
      * @example   $PayFlow->setPaymentMethod('C');
@@ -204,7 +201,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Payment Currency.
+     * Sets the Payment Currency.
      * @access    Public
      * @param     String $paymentCurrency - Available values: 'USD', 'EUR', 'GBP', 'CAD', 'JPY', 'AUD'.
      * @example   $PayFlow->setPaymentCurrency('USD');
@@ -219,7 +216,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Profile Action for recurring payments.
+     * Sets the Profile Action for recurring payments.
      * @access    Public
      * @param     String $profileAction - Available values: A = Add, M = Modify, R = Reactivate, C = Cancel, I = Inquiry, P = Payment.
      * @example   $PayFlow->setProfileAction('A');
@@ -234,7 +231,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Profile name for recurring payments.
+     * Sets the Profile name for recurring payments.
      * @access    Public
      * @param     String $profileName - Non-unique Name for the profile (user-specified). Can be used to search for a profile.
      * @example   $PayFlow->setProfileName('RegularSubscription');
@@ -249,7 +246,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Profile Start Date for recurring payments.
+     * Sets the Profile Start Date for recurring payments.
      * @access    Public
      * @param     String $profileStartDate - Beginning date for the recurring billing cycle used to calculate when payments should be made. Use tomorrow's date or a date in the future. Format: MMDDYYYY.
      * @example   $PayFlow->setProfileStartDate('01072011');
@@ -267,7 +264,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Profile Pay Period for recurring payments.
+     * Sets the Profile Pay Period for recurring payments.
      * @access    Public
      * @param     String $profilePayPeriod - Specifies how often the payment occurs. Available values: including all capital letters.
      *                                        WEEK: Weekly - Every week on the same day of the week as the first payment.
@@ -290,7 +287,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Profile Term for recurring payments.
+     * Sets the Profile Term for recurring payments.
      * @access    Public
      * @param     String|int $profileTerm - Number of payments to be made over the life of the agreement. A value of 0 means that payments should continue until the profile is deactivated.
      * @example   $PayFlow->setProfileTerm(0);
@@ -305,7 +302,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Amount of the transaction. Up to 15 digits with a decimal point (no dollar symbol)
+     * Sets the Amount of the transaction. Up to 15 digits with a decimal point (no dollar symbol)
      * @access    Public
      * @param     string|int|float $amount - 150.00.
      * @param     Boolean - $wholeAmt - True to remove decimal valuesfalse, to keep it.
@@ -321,7 +318,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Credit Card Number. Between 13 and 16 digits without spaces.
+     * Sets the Customer's Credit Card Number. Between 13 and 16 digits without spaces.
      * @access    Public
      * @param     String $number - The Credit Card Number. Dashes will be striped.
      * @example   $PayFlow->setCCNumber('1234-1234-1234-1234');
@@ -336,7 +333,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Credit Card Expiration Date. MMYY
+     * Sets the Customer's Credit Card Expiration Date. MMYY
      * @access    Public
      * @param     String $expiration - The Customer's Credit Card Expiration Date
      * @example   $PayFlow->setExpiration('0312');
@@ -351,7 +348,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's card code. The three- or four-digit number on the back of a credit card (on the front for American Express).
+     * Sets the Customer's card code. The three- or four-digit number on the back of a credit card (on the front for American Express).
      * @access    Public
      * @param     String $cvv - The Customer's Credit Card Security Code
      * @example   $PayFlow->setCVV('0000');
@@ -366,7 +363,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Credit Card Name. Up to 50 characters
+     * Sets the Customer's Credit Card Name. Up to 50 characters
      * @access    Public
      * @param     String $cardName - The First Name associated with the Customer's Billing Address.
      * @example   $PayFlow->setCreditCardName('Richard');
@@ -381,7 +378,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the First Name associated with the Customer's Billing Address. Up to 30 characters (no symbols)
+     * Sets the First Name associated with the Customer's Billing Address. Up to 30 characters (no symbols)
      * @access    Public
      * @param     String $firstName - The First Name associated with the Customer's Billing Address.
      * @example   $PayFlow->setCustomerFirstName('Richard');
@@ -396,7 +393,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Last Name associated with the Customer's Billing Address. Up to 30 characters (no symbols)
+     * Sets the Last Name associated with the Customer's Billing Address. Up to 30 characters (no symbols)
      * @access    Public
      * @param     String $lastName - The Last Name associated with the Customer's Billing Address.
      * @example   $PayFlow->setCustomerLastName('Castera');
@@ -411,7 +408,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Billing address. Up to 30 characters (no symbols)
+     * Sets the Customer's Billing address. Up to 30 characters (no symbols)
      * @access    Public
      * @param     String $customerAddress - The Customer's Billing address.
      * @example   $PayFlow->setCustomerAddress('589 8th Ave. Suite 10');
@@ -426,7 +423,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Billing City. Up to 20 characters (no symbols)
+     * Sets the Customer's Billing City. Up to 20 characters (no symbols)
      * @access    Public
      * @param     String $customerCity - The Customer's Billing City.
      * @example   $PayFlow->setCustomerCity('New York');
@@ -441,7 +438,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Billing State. Up to 2 characters (no symbols) a valid two-character state code.
+     * Sets the Customer's Billing State. Up to 2 characters (no symbols) a valid two-character state code.
      * @access    Public
      * @param     String $customerState - The Customer's Billing State.
      * @example   $PayFlow->setCustomerState('NY');
@@ -456,7 +453,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Billing Zip. Up to 9 characters (no symbols).
+     * Sets the Customer's Billing Zip. Up to 9 characters (no symbols).
      * @access    Public
      * @param     String $customerZip - The Customer's Billing Zip.
      * @example   $PayFlow->setCustomerZip('10018');
@@ -471,7 +468,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Billing Country. Up to 4 characters (no symbols).
+     * Sets the Customer's Billing Country. Up to 4 characters (no symbols).
      * @access    Public
      * @param     String $customerCountry - The Customer's Billing Country.
      * @example   $PayFlow->setCustomerCountry('US');
@@ -486,7 +483,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Billing Phone. Up to 20 digits (no letters) Ex. 123-123-1234 - Dashes will be stripped.
+     * Sets the Customer's Billing Phone. Up to 20 digits (no letters) Ex. 123-123-1234 - Dashes will be stripped.
      * @access    Public
      * @param     String $customerPhone - The Customer's Billing Phone.
      * @example   $PayFlow->setCustomerPhone('212-123-4567');
@@ -501,7 +498,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Customer's Email Address. Up to 60 characters.
+     * Sets the Customer's Email Address. Up to 60 characters.
      * @access    Public
      * @param     String $customerEmail - The Customer's Email Address.
      * @example   $PayFlow->setCustomerEmail('richard.castera@gmail.com');
@@ -516,7 +513,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Payment Description. This is just a commment regarding the transaction for your reference.
+     * Sets the Payment Description. This is just a commment regarding the transaction for your reference.
      * @access    Public
      * @param     String $description - The Payment description.
      * @example   $PayFlow->setPaymentComment('Purchased product number 34324');
@@ -531,7 +528,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets the Payment Description. This is just a commment regarding the transaction for your reference.
+     * Sets the Payment Description. This is just a commment regarding the transaction for your reference.
      * @access    Public
      * @param     String $description - The Payment description.
      * @example   $PayFlow->setPaymentComment2('Purchased product number 34324');
@@ -546,7 +543,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Sets a Merchant-defined field to submit to Paypal.
+     * Sets a Merchant-defined field to submit to Paypal.
      * @access    Public
      * @param     String $name - The name of the custom field.
      * @param     String $value - The value of the custom field.
@@ -562,9 +559,8 @@ class PayFlow {
 
 
     /**
-     * @uses      This get the NVP's that will be sent to Paypal.
+     * This get the NVP's that will be sent to Paypal.
      * @access    Private
-     * @param     None.
      * @return    String - A string of NVP's.
      * @example   $this->getNVP();
      */
@@ -578,9 +574,8 @@ class PayFlow {
 
 
     /**
-     * @uses      Sends the request to Paypal for processing.
+     * Sends the request to Paypal for processing.
      * @access    Public
-     * @param     None.
      * @return    Boolean - True if the transaction was successful False, if not.
      * @example   $PayFlow->processTransaction();
      */
@@ -622,7 +617,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Generates the headers we need to send to Payflow.
+     * Generates the headers we need to send to Payflow.
      * @access    Private
      * @param     array - $params - The NVP value pairs.
      * @return    array - Header information for cURL.
@@ -638,7 +633,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Generates a unique request id with the credit card number, amount, and timestamp.
+     * Generates a unique request id with the credit card number, amount, and timestamp.
      * @access    Private
      * @param     array - $params - The NVP value pairs.
      * @return    String - Unique id.
@@ -656,9 +651,8 @@ class PayFlow {
 
 
     /**
-     * @uses      Gets the response from Paypal.
+     * Gets the response from Paypal.
      * @access    Public
-     * @param     None.
      * @return    array|String - Returns an array of Paypal's response or empty string if not return.
      * @example   $PayFlow->getResponse();
      */
@@ -673,7 +667,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Parses the response from Paypal.
+     * Parses the response from Paypal.
      * @access    Private
      * @param     array - $result - The NVP result from the transaction.
      * @return    array|String - Returns an array of Paypal's response or empty string if not return.
@@ -696,7 +690,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Formats the monetary amount sent to Paypal.
+     * Formats the monetary amount sent to Paypal.
      * @access    Private
      * @param     String|Integer|Float $amount - The amount to clean.
      * @param     Boolean $wholeAmt - True to remove cents false, to keep it.
@@ -716,7 +710,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Removes all characters from the credit card number except for numbers.
+     * Removes all characters from the credit card number except for numbers.
      * @access    Private
      * @param     String $cc - The crdeit card number.
      * @return    String - Returns the credit card number with only numeric characters.
@@ -729,7 +723,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Removes all characters from the telephone number except for numbers and dashes.
+     * Removes all characters from the telephone number except for numbers and dashes.
      * @access    Private
      * @param     String $phone - The phone number.
      * @return    String - Returns the phone number with dashes.
@@ -742,7 +736,7 @@ class PayFlow {
 
 
     /**
-     * @uses      Removes all characters from the Expiration date except for numbers, slashes and dashes.
+     * Removes all characters from the Expiration date except for numbers, slashes and dashes.
      * @access    Private
      * @param     String $exp - The expiration date.
      * @return    String - Returns the expiration date formatted for Paypal.
@@ -755,7 +749,7 @@ class PayFlow {
 
 
     /**
-     * @uses    Used to truncate values.
+     * Used to truncate values.
      * @access  Private
      * @param   String $string - The string to truncate.
      * @param   Integer $limit - The amount to truncate.
@@ -763,12 +757,12 @@ class PayFlow {
      * @example $this->truncateChars('Richard Castera', 10);
      */
     private function truncateChars($string = '', $limit = 0) {
-        return (string )substr(trim($string), 0, $limit);
+        return (string) substr(trim($string), 0, $limit);
     }
 
 
     /**
-     * @uses    Used to debug values that will be sent to Paypal.
+     * Used to debug values that will be sent to Paypal.
      * @access  Public
      * @param   String $type - Valid values are 'array' or 'string'.
      * @return  string|array This returns either and array of the NVP's or a string based on the parameter chosen.
