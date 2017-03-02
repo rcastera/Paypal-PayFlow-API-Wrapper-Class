@@ -757,7 +757,7 @@ class PayFlow {
      * @example $this->truncateChars('Richard Castera', 10);
      */
     private function truncateChars($string = '', $limit = 0) {
-        return (string) substr(trim($string), 0, $limit);
+        return trim(substr(trim($string), 0, $limit));
     }
 
 
